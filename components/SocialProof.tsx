@@ -149,7 +149,9 @@ export default function SocialProof() {
                 ))}
               </div>
               <p className="text-white/70 text-sm leading-relaxed mb-6 flex-1">
-                "{quote}"
+                <p className="text-white/70 text-sm leading-relaxed mb-6 flex-1">
+                  &ldquo;{quote}&rdquo;
+                </p>
               </p>
               <div className="flex items-center gap-3">
                 <div

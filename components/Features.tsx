@@ -68,10 +68,13 @@ export default function Features() {
         trigger: titleRef.current,
         start: 'top 85%',
         onEnter: () => {
-          gsap.fromTo(titleRef.current?.querySelectorAll('.animate-in'),
-            { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out' }
-          )
+          const elements = titleRef.current?.querySelectorAll('.animate-in')
+          if (elements) {
+            gsap.fromTo(elements,
+              { opacity: 0, y: 40 },
+              { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out' }
+            )
+          }
         },
         once: true,
       })
