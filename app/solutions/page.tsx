@@ -102,7 +102,9 @@ export default function SolutionsPage() {
               <span className="text-green-bright">industry.</span>
             </h1>
             <p className="text-white/55 text-lg max-w-xl mx-auto leading-relaxed">
-              Whether you're a two-person startup or a multinational enterprise, SEQYO adapts to your environment, your compliance requirements, and your risk appetite.
+              Whether you&rsquo;re a two-person startup or a multinational
+              enterprise, SEQYO adapts to your environment, your compliance
+              requirements, and your risk appetite.
             </p>
           </div>
         </section>
@@ -110,45 +112,87 @@ export default function SolutionsPage() {
         {/* Solutions grid */}
         <section className="py-10 pb-28 px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7">
-            {solutions.map(({ icon: Icon, title, headline, description, features, color, accent }) => (
-              <div
-                key={title}
-                className="solution-card rounded-2xl overflow-hidden border border-white/8 hover:border-green-accent/25 transition-all duration-300 hover:-translate-y-1 group"
-              >
-                <div className="p-8" style={{ background: `linear-gradient(135deg, ${color} 0%, ${color}cc 100%)` }}>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ backgroundColor: `${accent}20` }}>
-                    <Icon size={22} style={{ color: accent }} />
-                  </div>
-                  <div className="text-xs font-semibold tracking-widest mb-2" style={{ color: `${accent}99` }}>
-                    {title.toUpperCase()}
-                  </div>
-                  <h3 className="font-display text-2xl font-bold text-white mb-3 leading-snug">{headline}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed">{description}</p>
-                </div>
-
-                <div className="bg-green-dark/70 px-8 py-6">
-                  <ul className="space-y-2 mb-6">
-                    {features.map((feat) => (
-                      <li key={feat} className="flex items-center gap-2.5 text-sm text-white/60">
-                        <span className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${accent}20` }}>
-                          <svg width="8" height="8" viewBox="0 0 8 8" fill={accent}>
-                            <path d="M1.5 4l2 2 3-3" stroke={accent} strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                          </svg>
-                        </span>
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3"
-                    style={{ color: accent }}
+            {solutions.map(
+              ({
+                icon: Icon,
+                title,
+                headline,
+                description,
+                features,
+                color,
+                accent,
+              }) => (
+                <div
+                  key={title}
+                  className="solution-card rounded-2xl overflow-hidden border border-white/8 hover:border-green-accent/25 transition-all duration-300 hover:-translate-y-1 group"
+                >
+                  <div
+                    className="p-8"
+                    style={{
+                      background: `linear-gradient(135deg, ${color} 0%, ${color}cc 100%)`,
+                    }}
                   >
-                    Learn more <ArrowRight size={14}/>
-                  </a>
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                      style={{ backgroundColor: `${accent}20` }}
+                    >
+                      <Icon size={22} style={{ color: accent }} />
+                    </div>
+                    <div
+                      className="text-xs font-semibold tracking-widest mb-2"
+                      style={{ color: `${accent}99` }}
+                    >
+                      {title.toUpperCase()}
+                    </div>
+                    <h3 className="font-display text-2xl font-bold text-white mb-3 leading-snug">
+                      {headline}
+                    </h3>
+                    <p className="text-white/55 text-sm leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
+
+                  <div className="bg-green-dark/70 px-8 py-6">
+                    <ul className="space-y-2 mb-6">
+                      {features.map((feat) => (
+                        <li
+                          key={feat}
+                          className="flex items-center gap-2.5 text-sm text-white/60"
+                        >
+                          <span
+                            className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
+                            style={{ backgroundColor: `${accent}20` }}
+                          >
+                            <svg
+                              width="8"
+                              height="8"
+                              viewBox="0 0 8 8"
+                              fill={accent}
+                            >
+                              <path
+                                d="M1.5 4l2 2 3-3"
+                                stroke={accent}
+                                strokeWidth="1.5"
+                                fill="none"
+                                strokeLinecap="round"
+                              />
+                            </svg>
+                          </span>
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="/contact"
+                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3"
+                      style={{ color: accent }}
+                    >
+                      Learn more <ArrowRight size={14} />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </div>
         </section>
 
@@ -156,5 +200,5 @@ export default function SolutionsPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
